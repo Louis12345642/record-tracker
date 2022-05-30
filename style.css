@@ -2,6 +2,7 @@
   margin:0;
   padding:0;
   line-height:1.6rem;
+  list-style:none;
   
 }
 :root{
@@ -106,6 +107,7 @@ form{
   padding:10px;
 }
 .form-child ,input{
+  color:var(--mainText);
   display:block;
   margin:7px;
   background:var(--mainColor);
@@ -122,6 +124,33 @@ form{
   justify-items:center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap:10px;
+}
+.static-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-gap:10px;
+  justify-items:center;
+  padding-top:5px;
+ 
+}
+.delete{
+ 
+  background:red;
+  width:20px;
+  height:20px;
+  border-radius:5px;
+ 
+}
+.delete h6{
+ text-align: center;
+ margin-right:5px;
+padding-top:0px;
+}
+.items{
+  display:flex;
+  justify-content:center;
+  padding-top:7px;
+  gap:50px;
 }
 .btn{
   width:95%;
