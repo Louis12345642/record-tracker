@@ -135,10 +135,12 @@ form{
 }
 .delete{
  
-  background:red;
-  width:20px;
+  background:#A50C35;
+  border-style:none;
+  width:30px;
   height:20px;
   border-radius:5px;
+  box-shadow:var(--boxShadow);
  
 }
 .delete h6{

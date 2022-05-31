@@ -1,49 +1,58 @@
-///even for the form
-const formData = document.querySelector('.form-child')
 
 
-const form=document.getElementById('kual')
+const form=document.querySelector('.form-child')
 
 
+form.addEventListener('submit', addToDom)
 
-//console.log(formData)
-
-form.addEventListener('click', addToDom)
-
-function addToDom() {
+function addToDom(event) {
+  event.preventDefault()
   //collecting data
-  const name=document.querySelector('input[name=name]').value;
+  var name=document.querySelector('input[name=name]').value;
   const price=document.querySelector('input[name=price]').value
  ///add to dom
+ 
   const parentItems=document.querySelector('#items-parent');
-  //const items=[]l 
-  
-  const Ul=document.createElement('ul')
+ 
+  //validation
+  const errors=[]
+  if(!name||!price){
+    
+    error={
+      "ms":"fill in all fields"
+    }
+    errors.push(error)
+    //console.log(error)
+    //Display the error througth the errors
+    document.querySelector
+  }
+
+else if (name.length<5||name.length>10){
+  error={
+    "ms":"Enter a valid item"
+  }
+  console.log()
+}
+  else{
+  var  Ul=document.createElement('ul')
   Ul.className="items";
   const ElementUl=`
     <li>${name}</li>
      <li>${price}</li>
-      <button class="delete"></button>`
+      <button onclick="deletItem()" class="delete"></button>`
       Ul.innerHTML=ElementUl;
- // ElementUl.className="items"
-  parentItems.appendChild(Ul)
-  //console.log(parentItems)
-  
-}
-//deleteButton
-const deleteBtn=document.getElementsByClassName('delete')
-//console.log(deleteBtn)
-for(let i=0; i<deleteBtn.length; i++){
-
-deleteBtn[i].addEventListener('click',deletItem)
-}
- function deletItem(e){
-  const item= document.querySelectorAll('.items')
-  
-   for(let i=0; i<item.length;i++){
-  //const target=e.target.ul
-   item[i].removeChild('ul')
+  parentItems.appendChild(Ul);
   
 
- }
+  }
+ //clear form data
+ document.querySelector('input[name=name]').value=''
+ document.querySelector('input[name=price]').value='';
+}
+ 
+///delete function
+
+function deletItem(){
+  const item=document.querySelector('.items')
+  item.remove()
 }
