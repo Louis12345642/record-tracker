@@ -160,6 +160,12 @@ padding-top:0px;
   border-style:none;
   border-radius:5px;
 }
+.error{
+  color:red;
+}
+.success{
+  color:green;
+}
 @media screen and (max-width:800px){
   .items-wrapper{
     display:grid;
